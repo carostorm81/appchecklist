@@ -1,0 +1,23 @@
+CORREÇÃO APLICADA - ERRO CHECKLISTS x PROFILES
+
+Problema encontrado:
+O Supabase/PostgREST retornava:
+"Could not embed because more than one relationship was found for 'checklists' and 'profiles'"
+
+Causa:
+A tabela checklists tem dois relacionamentos com profiles:
+1) checklists.user_id -> profiles.id
+2) checklists.reviewed_by -> profiles.id
+
+Quando a API pedia profile:profiles(...), o Supabase não sabia se deveria usar user_id ou reviewed_by.
+
+Correção aplicada:
+- Removidos embeds ambíguos profile:profiles(...) nas consultas de checklists.
+- Agora a Function busca checklists, profiles e assets separadamente e junta tudo no backend.
+- Também removido embed ambíguo fixed_asset:assets(...) da listagem de usuários.
+- Cache do Service Worker alterado para forçar atualização do navegador.
+
+Depois do deploy:
+1) Acesse /api/health.
+2) Limpe cache/cookies do site ou abra em aba anônima.
+3) Faça login novamente.

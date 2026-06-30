@@ -1,0 +1,12 @@
+CHECK-DIÁRIO PB - OWLL TECH MOBILE SEGURO
+
+1) As chaves do Supabase não ficam no front.
+2) Configure no Netlify:
+   SUPABASE_URL
+   SUPABASE_ANON_KEY
+   SUPABASE_SERVICE_ROLE_KEY
+   SUPABASE_BUCKET=checklist-pb
+3) Use publish directory: public
+4) Use functions directory: netlify/functions
+5) Teste: https://SEU-SITE.netlify.app/api/health
+6) Para APK, edite android-wrapper/app/src/main/res/values/strings.xml com a URL real do Netlify e compile no Android Studio.

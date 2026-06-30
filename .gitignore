@@ -1,0 +1,8 @@
+node_modules
+.env
+.netlify
+dist
+build
+android-wrapper/.gradle
+android-wrapper/app/build
+*.apk

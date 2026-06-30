@@ -1,0 +1,17 @@
+{
+  "name": "checklist-pb-owlltech",
+  "version": "1.0.0",
+  "description": "Sistema web seguro para checklist diário PB com Supabase e Netlify Functions.",
+  "private": true,
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Projeto estático pronto em public'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.38.1"
+  },
+  "type": "module"
+}
